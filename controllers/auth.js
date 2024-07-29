@@ -25,7 +25,7 @@ export const login = async (req, res, next) => {
     res.cookie("jwt", token, {
       httpOnly: false,
       secure: true,
-      sameSite: "Strict",
+      sameSite: "Lax",
     });
     console.log("Cookie set");
 
