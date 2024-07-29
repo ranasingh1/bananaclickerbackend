@@ -19,11 +19,16 @@ export const login = async (req, res, next) => {
       process.env.JWT,
       { expiresIn: "1d" }
     );
+
+    console.log("Token generated:", token);
+
     res.cookie("jwt", token, {
-      httpOnly: true,
+      httpOnly: false,
       secure: true,
       sameSite: "Strict",
     });
+    console.log("Cookie set");
+
     res.send("Logged in successfully");
   } catch (err) {
     console.log(err)
