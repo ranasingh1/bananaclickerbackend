@@ -20,14 +20,8 @@ export const login = async (req, res, next) => {
       { expiresIn: "1d" }
     );
 
-    console.log("Token generated:", token);
-
-    res.cookie("jwt", token, {
-      httpOnly: false,
-      secure: false,
-      sameSite: "Lax",
-    });
-    console.log("Cookie set");
+    console.log("Token generated:", token);  
+    res.json({ message: "Logged in successfully", token });
 
     res.send("Logged in successfully");
   } catch (err) {
