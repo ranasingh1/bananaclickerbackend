@@ -20,8 +20,8 @@ export const login = async (req, res, next) => {
       { expiresIn: "1d" }
     );
     res.cookie("jwt", token, {
-      httpOnly: false,
-      secure: false,
+      httpOnly: true,
+      secure: true,
       sameSite: "Strict",
     });
     res.send("Logged in successfully");
