@@ -22,10 +22,11 @@ export const login = async (req, res, next) => {
     res.cookie("jwt", token, {
       httpOnly: false,
       secure: false,
-      sameSite: "Lax",
+      sameSite: "Strict",
     });
     res.send("Logged in successfully");
   } catch (err) {
+    console.log(err)
     next(err);
   }
 };
