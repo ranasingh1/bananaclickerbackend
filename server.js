@@ -17,6 +17,8 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
+      "https://bananaclickerfrontend-48ko.vercel.app"
+
     ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     credentials: true,
