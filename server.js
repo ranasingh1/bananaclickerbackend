@@ -21,7 +21,6 @@ app.use(
 
     ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    credentials: true,
     optionsSuccessStatus: 200,
   })
 );

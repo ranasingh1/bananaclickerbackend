@@ -20,7 +20,9 @@ export const login = async (req, res, next) => {
       { expiresIn: "1d" }
     );
 
-    console.log("Token generated:", token);  
+    console.log("Token generated:", token);
+
+    
     res.json({ message: "Logged in successfully", token });
 
     res.send("Logged in successfully");
@@ -31,9 +33,4 @@ export const login = async (req, res, next) => {
 };
 
 //------------LOGOUT-----------//
-0;
 
-export const logout = (req, res) => {
-  res.clearCookie("jwt");
-  res.send("Logged out successfully");
-};
