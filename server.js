@@ -29,7 +29,10 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use("/api/v1", authRoutes);
-app.use("/api/v1", verifyToken, adminRoutes);
+app.use("/api/v1",  adminRoutes);
+
+//app.use("/api/v1", verifyToken, adminRoutes) ADD AFTER ADDING TOKEN IN REQUESTS
+
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
