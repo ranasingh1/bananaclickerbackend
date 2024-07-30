@@ -12,14 +12,14 @@ import { verifyAdmin } from "../middleware/verifyToken.js";
 const router = express.Router();
 
 //------------CRUD-----------//
+//TODO-ADD MIDDLEWARE TO VERIFY ADMIN(verifyAdmin) AFTER UDATING REQUESTS FROM FRONTEND WITH ADDING HEADER TOKEN
+router.post("/createUser", createUser);
 
-router.post("/createUser", verifyAdmin, createUser);
+router.get("/getUsers", getUsers);
 
-router.get("/getUsers", verifyAdmin, getUsers);
+router.put("/updateUser/:id",updateUser);
 
-router.put("/updateUser/:id", verifyAdmin, updateUser);
-
-router.delete("/deleteUser/:id", verifyAdmin, deleteUser);
+router.delete("/deleteUser/:id", deleteUser);
 
 //------------BLOCK/UNBLOCK-----------//
 
